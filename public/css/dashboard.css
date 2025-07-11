@@ -1,0 +1,150 @@
+
+body {
+  background-color: #f5f7fa;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar .btn {
+  font-weight: 500;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+form,
+#expense-list {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 450px;
+}
+      #leaderboard-list {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        max-width: 950px;
+        margin: 0 auto 40px;
+      }
+
+
+#leaderboard-message {
+  display: none;
+  color: #dc3545;
+  font-weight: 500;
+  margin-top: 15px;
+  text-align: center;
+}
+
+form label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  width: 100%;
+  background-color: #007bff;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+
+#expense-list ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+#expense-list ul li {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+#downloadexpense {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

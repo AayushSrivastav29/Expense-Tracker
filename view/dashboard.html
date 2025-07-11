@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+        <link rel="icon" type="image/png" href="/images/mainlogo.png">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-left">
+        <img src="/images/mainlogo.png" alt="Logo" class="rounded-circle" />
+        <h2 id="name" class="mb-0 fs-4">ExpenseTracker</h2>
+        <p id="premiumBadge" class="badge bg-warning text-dark d-none mb-0">
+          PREMIUM
+        </p>
+      </div>
+      <div class="navbar-right">
+        <button id="leaderboard" class="btn btn-outline-success">
+          Leaderboard
+        </button>
+        <button id="buyPremiumBtn" class="btn btn-warning">
+          Upgrade to Premium
+        </button>
+        <button id="logout" class="btn btn-danger">Logout</button>
+        <button
+          onclick="download()"
+          id="downloadexpense"
+          class="btn btn-success"
+        >
+          Download Report
+        </button>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <form>
+        <label for="amount">Choose Expense amount</label>
+        <input type="number" name="amount" id="amount" />
+
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" />
+
+        <label for="category">Choose category</label>
+        <select id="category">
+          <option value="fuel">Fuel</option>
+          <option value="rent">Rent</option>
+          <option value="bills">Bills</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="groceries">Groceries</option>
+          <option value="essentials">Essentials</option>
+          <option value="salary">Salary</option>
+        </select>
+
+        <button type="submit">Add Expense</button>
+      </form>
+
+      <div id="expense-list">
+        <label for="expense-rows">Rows per page: </label>
+        <select id="expense-rows" class="form-select w-auto d-inline-block">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <p id="total-expense" class="fw-bold mt-3"></p>
+        <ul id="expense-ul"></ul>
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </div>
+
+    <div id="leaderboard-list">
+      <h4 class="text-center">Leaderboard</h4>
+      <p id="leaderboard-message"></p>
+    </div>
+
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <script src="/js/cashfreeWeb_modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="icon" type="image/png" href="/images/mainlogo.png">
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+
+  <body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/images/mainlogo.png"
+            alt="Logo"
+            class="rounded-circle"
+            width="70"
+            height="70"
+          />
+          <span class="ms-2 fw-bold"
+            >Expense<span class="text-warning">Tracker</span></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+                >Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-outline-light py-2"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#signupModal"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <button
+                class="nav-link btn btn-warning ms-2 py-2"
+                data-bs-toggle="modal"
+                data-bs-target="#premiumModal"
+              >
+                Go Premium
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <h1 class="display-4 fw-bold mb-4">
+              Take Control of Your <span class="text-success">Finances</span>
+            </h1>
+            <p class="lead mb-4">
+              Track your expenses, set budgets, and achieve your financial goals
+              with our easy-to-use expense tracker.
+            </p>
+            <div class="d-flex gap-3">
+              <button
+                class="btn btn-success btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#signupModal"
+              >
+                Get Started
+              </button>
+              <button
+                class="btn btn-outline-success btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="/images/primary.png"
+              alt="Finance illustration"
+              class="img-fluid d-none d-lg-block"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-white">
+      <div class="container">
+        <h2 class="text-center mb-5">Key Features</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div
+                  class="feature-icon bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4"
+                >
+                  <i class="fas fa-chart-pie fa-2x"></i>
+                </div>
+                <h4>Expense Tracking</h4>
+                <p>
+                  Easily track all your expenses in one place with detailed
+                  categories and visual reports.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div
+                  class="feature-icon bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4"
+                >
+                  <i class="fas fa-wallet fa-2x"></i>
+                </div>
+                <h4>Budget Management</h4>
+                <p>
+                  Set monthly budgets and get alerts when you're approaching
+                  your spending limits.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <div class="card-body text-center p-4">
+                <div
+                  class="feature-icon bg-success bg-opacity-10 text-success rounded-circle mx-auto mb-4"
+                >
+                  <i class="fas fa-mobile-alt fa-2x"></i>
+                </div>
+                <h4>Multi-Device Sync</h4>
+                <p>
+                  Access your financial data from any device with our secure
+                  cloud synchronization.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <!-- <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="/images/mainlogo.png"
+              alt="About us"
+              class="img-fluid rounded shadow"
+            />
+          </div>
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <h2>About ExpenseTracker</h2>
+            <p class="lead">
+              We're on a mission to help people take control of their finances.
+            </p>
+            <p>
+              ExpenseTracker was founded in 2023 with the goal of making
+              personal finance management simple and accessible to everyone. Our
+              team of financial experts and developers have created a tool that
+              combines powerful features with an intuitive interface.
+            </p>
+            <p>
+              Whether you're trying to save for a big purchase, pay off debt, or
+              just understand where your money goes each month, ExpenseTracker
+              can help you achieve your financial goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section id="about" class="py-5 bg-light">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-6 d-flex">
+            <div class="w-100">
+              <img
+                src="/images/1727409122660.png "
+                alt="About us"
+                class="img-fluid rounded shadow h-100 w-100 object-fit-cover"
+              />
+            </div>
+          </div>
+          <div
+            class="col-lg-6 mt-4 mt-lg-0 d-flex flex-column justify-content-center"
+          >
+            <div>
+              <h2>About ExpenseTracker</h2>
+              <p class="lead">
+                We're on a mission to help people take control of their
+                finances.
+              </p>
+              <p>
+                ExpenseTracker was founded in 2025 with the goal of making
+                personal finance management simple and accessible to everyone.
+                Our team of financial experts and developers have created a tool
+                that combines powerful features with an intuitive interface.
+              </p>
+              <p>
+                Whether you're trying to save for a big purchase, pay off debt,
+                or just understand where your money goes each month,
+                ExpenseTracker can help you achieve your financial goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="loginModalLabel">
+              Login to Your Account
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="loginPassword"
+                  required
+                />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="rememberMe"
+                  />
+                  <label class="form-check-label" for="rememberMe"
+                    >Remember me</label
+                  >
+                </div>
+                <a
+                  href="#"
+                  class="text-decoration-none"
+                  data-bs-toggle="modal"
+                  data-bs-target="#forgotPasswordModal"
+                  data-bs-dismiss="modal"
+                  >Forgot password?</a
+                >
+              </div>
+              <button type="submit" class="btn btn-success w-100">Login</button>
+            </form>
+            <div class="text-center mt-3">
+              <p>
+                Don't have an account?
+                <a
+                  href="#"
+                  class="text-decoration-none"
+                  data-bs-toggle="modal"
+                  data-bs-target="#signupModal"
+                  data-bs-dismiss="modal"
+                  >Sign up</a
+                >
+              </p>
+            </div>
+            <div id="loginMessage" class="alert d-none mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      aria-labelledby="signupModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="signupModalLabel">
+              Create Your Account
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="signupForm">
+              <div class="mb-3">
+                <label for="signupName" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="signupName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="signupEmail" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="signupEmail"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="signupPassword" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signupPassword"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="signupConfirmPassword" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signupConfirmPassword"
+                  required
+                />
+              </div>
+              <div class="form-check mb-3">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="agreeTerms"
+                  required
+                />
+                <label class="form-check-label" for="agreeTerms"
+                  >I agree to the
+                  <a href="#" class="text-decoration-none"
+                    >Terms and Conditions</a
+                  ></label
+                >
+              </div>
+              <button type="submit" class="btn btn-success w-100">
+                Sign Up
+              </button>
+            </form>
+            <div class="text-center mt-3">
+              <p>
+                Already have an account?
+                <a
+                  href="#"
+                  class="text-decoration-none"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                  data-bs-dismiss="modal"
+                  >Login</a
+                >
+              </p>
+            </div>
+            <div id="signupMessage" class="alert d-none mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div
+      class="modal fade"
+      id="forgotPasswordModal"
+      tabindex="-1"
+      aria-labelledby="forgotPasswordModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="forgotPasswordModalLabel">
+              Reset Your Password
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="forgotPasswordForm">
+              <div class="mb-3">
+                <label for="forgotEmail" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="forgotEmail"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-success w-100">
+                Send Reset Link
+              </button>
+            </form>
+            <div id="forgotPasswordMessage" class="alert d-none mt-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Premium Modal -->
+    <div
+      class="modal fade"
+      id="premiumModal"
+      tabindex="-1"
+      aria-labelledby="premiumModalLabel"
+      aria-hidden="true"
+    >
+      <!--  -->
+      <div id="premiumMessage" class="alert d-none mt-3"></div>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-white">
+            <h5 class="modal-title" id="premiumModalLabel">
+              Upgrade to Premium
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4 class="text-center mb-4">Premium Features</h4>
+            <ul class="list-group list-group-flush mb-4">
+              <li class="list-group-item">
+                <i class="fas fa-check text-success me-2"></i> Unlimited expense
+                categories
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success me-2"></i> Advanced
+                reporting
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success me-2"></i> Multi-currency
+                support
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success me-2"></i> Priority customer
+                support
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-check text-success me-2"></i> Bank account
+                integration
+              </li>
+            </ul>
+            <div class="text-center">
+              <h5 class="mb-3">$4.99/month</h5>
+              <button class="btn btn-warning btn-lg" id="upgradeButton">
+                Upgrade Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5>ExpenseTracker</h5>
+            <p>Helping you manage your finances since 2023.</p>
+          </div>
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none">Home</a>
+              </li>
+              <li>
+                <a href="#features" class="text-white text-decoration-none"
+                  >Features</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="text-white text-decoration-none"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h5>Legal</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-white text-decoration-none"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-white text-decoration-none">Terms</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Subscribe to Newsletter</h5>
+            <form class="mt-3">
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your email"
+                />
+                <button class="btn btn-success" type="submit">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 ExpenseTracker. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- Cashfree SDK -->
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/js/home.js"></script>
+  </body>
+</html>
