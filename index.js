@@ -4,7 +4,6 @@ const app = express();
 const db = require("./utils/db-connection");
 const path = require("path");
 const fs = require("fs");
-const morgan = require('morgan')
 require('dotenv').config();
 
 //
@@ -28,8 +27,6 @@ app.use("/api/expense", expenseRoute);
 app.use("/api/payment", paymentRoute);
 app.use("/api/premium", premiumRoute);
 
-const accessLog = fs.createWriteStream(path.join(__dirname,'access.log'), {flags: 'a'})
-app.use(morgan('combined', {stream:accessLog}))
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "view", "home.html"));
