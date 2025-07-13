@@ -55,6 +55,7 @@ app.all("/{*any}", (req, res) => {
 
 const PORT = process.env.PORT;
 
+console.log("checking changes");
 
 db.sync()
   .then(() => {
