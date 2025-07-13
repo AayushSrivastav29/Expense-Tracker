@@ -5,6 +5,7 @@ let itemsPerPage;
 let rows;
 let allExpenses = [];
 let token;
+const path = "http://65.1.134.87";
 
 function initialize() {
   token = localStorage.getItem("token");
@@ -42,7 +43,7 @@ function initialize() {
 // Fetch all expenses
 function fetchExpenses() {
   axios
-  .get(`/api/expense/`, {
+  .get(`${path}/api/expense/`, {
     headers: { Authorization: token },
   })
   .then((result) => {
@@ -145,7 +146,7 @@ async function addData() {
     category,
   };
 
-  await axios.post(`http://localhost:3000/api/expense/add`, expenseDetails, {
+  await axios.post(`${path}/api/expense/add`, expenseDetails, {
     headers: { Authorization: token },
   });
 }
@@ -179,7 +180,7 @@ function display(expense) {
 // Delete expense from local storage and DOM
 async function deleteData(id, li) {
   await axios
-    .delete(`http://localhost:3000/api/expense/delete/${id}`, {
+    .delete(`${path}/api/expense/delete/${id}`, {
       headers: {
         Authorization: token,
       },
@@ -219,7 +220,7 @@ async function updateData() {
 
   try {
     const updatedResult = await axios.put(
-      `http://localhost:3000/api/expense/edit/${currentlyEditingId}`,
+      `${path}/api/expense/edit/${currentlyEditingId}`,
       updatedData
     );
     //console.log("updated successfully", updatedResult);
@@ -272,7 +273,7 @@ function leaderboardMessage(){
 leaderBtn.addEventListener("click", async () => {
   document.querySelector("#leaderboard-list > h4").style.visibility = "visible";
   const ul = document.createElement("ul");
-  const list = await axios.get("/api/premium/leaderboard");
+  const list = await axios.get(`${path}/api/premium/leaderboard `);
   const listArr = list.data.data;
 
   listArr.forEach((data) => {
@@ -287,7 +288,7 @@ leaderBtn.addEventListener("click", async () => {
 //download expense feature
 function download() {
   axios
-    .get("http://localhost:3000/api/expense/download", {
+    .get(`${path}/api/expense/download`, {
       headers: { Authorization: token }
     })
     .then((response) => {

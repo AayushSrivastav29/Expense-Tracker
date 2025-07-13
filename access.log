@@ -13,3 +13,5 @@
 ::ffff:127.0.0.1 - - [11/Jul/2025:14:29:14 +0000] "GET /js/cashfreeWeb_modal.js HTTP/1.1" 200 269 "http://localhost:3000/dashboard.html" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"
 ::ffff:127.0.0.1 - - [11/Jul/2025:14:29:29 +0000] "GET /js/cashfreeWeb_modal.js HTTP/1.1" 304 - "http://localhost:3000/dashboard.html" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"
 ::ffff:127.0.0.1 - - [11/Jul/2025:14:29:52 +0000] "GET /js/cashfreeWeb_modal.js HTTP/1.1" 304 - "http://localhost:3000/dashboard.html" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"
+::ffff:127.0.0.1 - - [11/Jul/2025:19:19:35 +0000] "GET /js/cashfreeWeb_modal.js HTTP/1.1" 304 - "http://localhost:3000/dashboard.html" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"
+::ffff:127.0.0.1 - - [12/Jul/2025:15:58:13 +0000] "GET /favicon.ico HTTP/1.1" 200 269 "http://localhost:3000/api/payment/status/ORDER-1752335858431" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"

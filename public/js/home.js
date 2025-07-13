@@ -1,3 +1,4 @@
+const path = "http://65.1.134.87";
 
 
 // Login Form Handling
@@ -16,7 +17,7 @@ loginForm.addEventListener("submit", async function (e) {
   };
 
   await axios
-    .post(`http://localhost:3000/api/user/find`, userDetails)
+    .post(`${path}/api/user/find`, userDetails)
     .then((result) => {
       localStorage.setItem("token", result.data.token);
       localStorage.setItem('isPremium', result.data.user.isPremium)
@@ -70,7 +71,7 @@ signupForm.addEventListener("submit", async function (e) {
   };
 
   const result = await axios.post(
-    `http://localhost:3000/api/user/create`,
+    `${path}/api/user/create`,
     newUser
   );
   //console.log(result);
@@ -100,7 +101,7 @@ forgotPasswordForm.addEventListener("submit", async function (e) {
 
   const email = document.getElementById("forgotEmail").value;
 
-  await axios.post('/api/user/forgotpassword', {email: email});
+  await axios.post(`${path}/api/user/forgotpassword`, {email: email});
   
   // Simulate API call
   setTimeout(() => {
