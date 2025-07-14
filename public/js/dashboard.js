@@ -79,7 +79,7 @@ function renderPage(page) {
   pageExpenses.forEach((expense) => {
     display(expense);
   });
-  // renderPaginationControls();
+   renderPaginationControls();
 }
 
 // Render pagination controls
