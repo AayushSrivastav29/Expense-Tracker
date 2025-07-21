@@ -13,57 +13,61 @@ function initialize() {
   if (localStorage.getItem("isPremium") === "true") {
     updatePremiumUI();
     document.querySelector("#downloadexpense").style.display = "block";
-  }else{
+  } else {
     document.querySelector("#leaderboard").style.display = "none";
     leaderboardMessage();
   }
-  
 
   //fetch name
   const name = localStorage.getItem("name");
   document.querySelector("#name").textContent = `Hi, ${name}!`;
 
   //fetch rows
-   itemsPerPage = Number(localStorage.getItem('rows') || 5);
-  
+  itemsPerPage = Number(localStorage.getItem("rows") || 5);
+
   // Initialize premium button
   document
     .getElementById("buyPremiumBtn")
     .addEventListener("click", handlePremiumUpgrade);
-    
+
   // Load initial data
   fetchExpenses();
-  
+
   // Attach form submit handler
   document.querySelector("form").addEventListener("submit", handleFormSubmit);
 }
 
-
-
 // Fetch all expenses
 function fetchExpenses() {
   axios
-  .get(`${path}/api/expense/`, {
-    headers: { Authorization: token },
-  })
-  .then((result) => {
-    allExpenses = result.data;
-    //console.log(allExpenses);
-    renderPage(currentPage); // Render first page initially
-    renderPaginationControls();
-  })
-  .catch((err) => {
-    alert(`Error in fetching data`);
-  });
+    .get(`${path}/api/expense/`, {
+      headers: { Authorization: token },
+    })
+    .then((result) => {
+      allExpenses = result.data;
+      if (allExpenses.length === 0) {
+        const ul = document.querySelector("ul");
+        const li = document.createElement("li");
+        li.textContent=`Create an expense`;
+        li.style.listStyle='none';
+        li.style.color='green';
+        ul.appendChild(li);
+      }
+      //console.log(allExpenses);
+      renderPage(currentPage); // Render first page initially
+      renderPaginationControls();
+    })
+    .catch((err) => {
+      alert(`Error in fetching data`);
+    });
 }
 
-document.querySelector('#expense-rows').addEventListener('change', (event)=>{
+document.querySelector("#expense-rows").addEventListener("change", (event) => {
   rows = event.target.value;
-  localStorage.setItem('rows',rows);
-  itemsPerPage=rows;
+  localStorage.setItem("rows", rows);
+  itemsPerPage = rows;
   fetchExpenses();
-
-})
+});
 
 // Render a specific page
 function renderPage(page) {
@@ -79,7 +83,7 @@ function renderPage(page) {
   pageExpenses.forEach((expense) => {
     display(expense);
   });
-   renderPaginationControls();
+  renderPaginationControls();
 }
 
 // Render pagination controls
@@ -113,8 +117,8 @@ function renderPaginationControls() {
 
   nextButton.addEventListener("click", () => renderPage(currentPage + 1));
   paginationDiv.appendChild(nextButton);
-   if (!existingPagination) {
-    document.querySelector('#expense-list').appendChild(paginationDiv);
+  if (!existingPagination) {
+    document.querySelector("#expense-list").appendChild(paginationDiv);
   }
 }
 
@@ -194,7 +198,6 @@ async function deleteData(id, li) {
     .catch((err) => {
       alert("Error in deleting expense");
     });
-
 }
 
 // Populate form for editing
@@ -225,7 +228,6 @@ async function updateData() {
       updatedData
     );
     //console.log("updated successfully", updatedResult);
-
   } catch (error) {
     alert("Error updating expense:", error);
   }
@@ -265,10 +267,10 @@ function updatePremiumUI() {
 const leaderBtn = document.querySelector("#leaderboard");
 const leaderboard = document.querySelector("#leaderboard-list");
 
-function leaderboardMessage(){
-  const message = document.querySelector('#leaderboard-message');
-  message.textContent=`Upgrade to premium to view content!`;
-  message.style.display='block';
+function leaderboardMessage() {
+  const message = document.querySelector("#leaderboard-message");
+  message.textContent = `Upgrade to premium to view content!`;
+  message.style.display = "block";
 }
 
 leaderBtn.addEventListener("click", async () => {
@@ -290,14 +292,14 @@ leaderBtn.addEventListener("click", async () => {
 function download() {
   axios
     .get(`${path}/api/expense/download`, {
-      headers: { Authorization: token }
+      headers: { Authorization: token },
     })
     .then((response) => {
-      if (response.status===200) {
-        const link = document.createElement('a');
-        link.href= response.data.fileUrl;
+      if (response.status === 200) {
+        const link = document.createElement("a");
+        link.href = response.data.fileUrl;
         console.log(link);
-        link.download = 'expenses.csv';
+        link.download = "expenses.csv";
         link.click();
       }
     })
