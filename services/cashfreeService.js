@@ -28,7 +28,7 @@ exports.createOrder = async (
       },
 
       order_meta: {
-        return_url: `http://65.1.134.87/api/payment/status/${orderId}`,
+        return_url: `http://35.154.195.9/api/payment/status/${orderId}`,
         //notify_url: "https://www.cashfree.com/devstudio/preview/pg/webhooks/46631095",
 
         payment_methods: "ccc, upi, nb",

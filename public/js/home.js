@@ -1,4 +1,4 @@
-const path = "http://65.1.134.87";
+const path = "http://35.154.195.9";
 
 
 // Login Form Handling

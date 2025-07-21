@@ -5,7 +5,7 @@ let itemsPerPage;
 let rows;
 let allExpenses = [];
 let token;
-const path = "http://65.1.134.87";
+const path = "http://35.154.195.9";
 
 function initialize() {
   token = localStorage.getItem("token");
@@ -189,6 +189,7 @@ async function deleteData(id, li) {
       li.remove();
       // Refresh the data
       fetchExpenses();
+      renderPage(currentPage);
     })
     .catch((err) => {
       alert("Error in deleting expense");
