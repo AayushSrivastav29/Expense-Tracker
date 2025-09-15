@@ -106,26 +106,6 @@ npm run build
 pm2 start index.js --name expense-tracker
 ```
 
-## 📂 Project Structure
-
-```
-expense-tracker-pro/
-├── client/               # Frontend assets
-│   ├── public/           # Static files
-│   └── src/              # JavaScript source
-├── server/               # Backend
-│   ├── config/           # Database config
-│   ├── controllers/      # Route controllers
-│   ├── middlewares/      # Custom middlewares
-│   ├── models/           # Sequelize models
-│   ├── routes/           # API routes
-│   ├── services/         # Business logic
-│   └── utils/            # Helper functions
-├── .env.example          # Environment template
-├── package.json          # Backend dependencies
-└── README.md             # Project documentation
-```
-
 ## 🛡 Security Features
 
 - JWT authentication
@@ -158,4 +138,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📧 LINK
 
-Website link: http://65.1.134.87/
+Website link: https://expense-tracker-qcaa.onrender.com
